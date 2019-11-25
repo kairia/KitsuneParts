@@ -1,0 +1,129 @@
+@import './flexCenter';
+@import './SelectDisable';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    background-color: #252525;
+}
+.preload{
+    @include flexCenter();
+    @include SelectDisable();
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #252525;
+    transition: opacity ease 1.25s;
+    p{
+        z-index: 2;
+        color: white;
+        font-size: 30px;
+    }
+    #logo{
+        position: absolute;
+        width: 450px;
+        animation: spin 10s linear infinite;
+    }
+    #logo:nth-child(1){
+        filter: blur(5px);
+        animation: spin 10s linear infinite,breath 12s ease infinite alternate ;
+    }
+    #logo:nth-child(2){
+        filter: blur(10px);
+        animation: spin 10s linear infinite,breath 6s ease infinite alternate ;
+    }
+    #logo:nth-child(3){
+        filter: blur(15px);
+        animation: spin 10s linear infinite,breath 2s ease infinite alternate ;
+     
+    }
+    #text{
+        position: absolute;
+        width: 400px;
+        transform: translateY(50%);
+    }
+    #textblur{
+        position: absolute;
+        width: 400px;
+        transform: translateY(50%);
+        filter: blur(7px);
+    }
+    
+    @keyframes spin{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes breath{
+        from{
+          opacity:0.3 ;
+        }
+        to{
+          opacity: 1;
+        }
+      }
+}
+.preload-finish{
+    opacity: 0;
+    pointer-events: none;
+  }
+.nav{
+    position: fixed;
+    top: -100%;
+    display: flex;
+    z-index: 2;
+    width: 100%;
+    height: 6vh;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: linear-gradient(to top, rgb(31, 182, 175) 0%, #454545 100%);
+    opacity: 0.8;
+    transition: ease 1.5s;
+    .link{
+        display: flex;
+        justify-content: space-around;
+        a{
+            padding-left: 5vw;
+            font-family: 'Play', sans-serif;
+            font-size: 25px;
+            color: white;
+            text-decoration:none;
+        }
+    }
+    img{
+        height: 60%;
+    }
+    @keyframes startup{
+        0%{
+            transform: translateY(0);
+        }
+        100%{
+            transform: translateY(100%);
+        }
+    }
+}
+.nav-engage{
+    top: 0%;
+}
+.footer{
+    @include flexCenter();
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 5vh;
+    background-color: #151515;
+    bottom: 0;
+    .claim{
+        font-family: Helvetica;
+        color: white;
+        font-size: 5px;
+        opacity: 0.5;
+    }
+}
