@@ -13,9 +13,10 @@ window.addEventListener('load', () => {
 /* preloader */
 const tween = new TimeLineLite();
 
-const controller = new ScrollMagic.Controller({addIndicators: true});
+const controller = new ScrollMagic.Controller();
 const nav = new ScrollMagic.Scene({
     triggerElement: '.info',
     duration:3000
 });
+
 
