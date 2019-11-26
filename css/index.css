@@ -9,6 +9,11 @@ html {
   background-color: #252525;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .preload {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -143,8 +148,7 @@ html {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#1fb6af), to(#454545));
-  background-image: linear-gradient(to top, #1fb6af 0%, #454545 100%);
+  background-color: #1c857f;
   opacity: 0.8;
   -webkit-transition: ease 1.5s;
   transition: ease 1.5s;
@@ -167,7 +171,7 @@ html {
 }
 
 .nav img {
-  height: 60%;
+  height: 80%;
 }
 
 @-webkit-keyframes startup {
@@ -192,8 +196,86 @@ html {
   }
 }
 
-.nav-engage {
-  top: 0%;
+.navabs {
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 0;
+  width: 100%;
+  height: 6vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #1c857f;
+  opacity: 1;
+  -webkit-transition: ease 1.5s;
+  transition: ease 1.5s;
+}
+
+.navabs .link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.navabs .link a {
+  padding-left: 5vw;
+  font-family: 'Play', sans-serif;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.navabs img {
+  height: 80%;
+}
+
+@keyframes startup {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
+.banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 70vh;
+  background-color: #353535;
+}
+
+.banner img {
+  width: 30%;
+  min-width: 350px;
+}
+
+.info {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 2000px;
 }
 
 .footer {
@@ -206,7 +288,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
+  position: relative;
   z-index: 2;
   width: 100%;
   height: 8vh;

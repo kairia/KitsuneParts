@@ -1,7 +1,21 @@
-window.addEventListener('load',()=>{
 
-    const preload=document.querySelector('.preload');
-    const nav=document.querySelector('.nav');
+/* preloader */
+$('html, body').css({
+    'overflow': 'hidden',
+    'height': '100%'
+})
+window.addEventListener('load', () => {
+
+    const preload = document.querySelector('.preload');
     preload.classList.add('preload-finish');
-    nav.classList.add('nav-engage');
-    });
+    $('html, body').removeAttr('style')
+});
+/* preloader */
+const tween = new TimeLineLite();
+
+const controller = new ScrollMagic.Controller({addIndicators: true});
+const nav = new ScrollMagic.Scene({
+    triggerElement: '.info',
+    duration:3000
+});
+
