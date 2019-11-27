@@ -1,3 +1,8 @@
+var AnimationSpeed = 30;
+
+
+
+
 var block = document.querySelectorAll('.block');
 var Animstop = new Boolean(false);
 /* preloader */
@@ -13,21 +18,23 @@ window.addEventListener('load', () => {
 });
 /* preloader */
 /* randomanimater */
-function setProperty(height,width,horizon,vertic) {
+function setProperty(height,width,horizon,vertic,opacity) {
     const selected = Math.round(Math.random()*15);
     block[selected].style.setProperty('--randomHeight', height +'px' );
     block[selected].style.setProperty('--randomWidth', width +'px');
-    block[selected].style.setProperty('--randomX', horizon );
-    block[selected].style.setProperty('--randomY', vertic );
+    block[selected].style.setProperty('--randomX', horizon +'%');
+    block[selected].style.setProperty('--randomY', vertic +'%');
+    block[selected].style.setProperty('--randomOpacity', opacity );
   }
   function changePercentage() {
     var height = Math.random()*100;
     var width = Math.random()*100;
-    var horizon = Math.random()*3000+100;
-    var vertic = Math.random()*1000;
-    setProperty(height,width,horizon,vertic);
+    var horizon = Math.random()*100;
+    var vertic = Math.random()*100;
+    var opacity =Math.random()*0.7+0.1;
+    setProperty(height,width,horizon,vertic,opacity);
   }
-  setInterval(changePercentage, 60);
+  setInterval(changePercentage, AnimationSpeed);
 /* randomanimater */
 
 const controller = new ScrollMagic.Controller();
