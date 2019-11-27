@@ -1,6 +1,9 @@
 @import "./flexCenter";
 @import "./SelectDisable";
 
+$banner-height:85vh;
+
+
 :root {
   --randomHeight: 10;
   --randomWidth: 10;
@@ -16,6 +19,7 @@
 }
 html {
   background-color: #252525;
+  scroll-behavior: smooth;
 }
 html,
 body {
@@ -95,7 +99,7 @@ body {
   width: 100%;
   height: 6vh;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background-color: rgb(28, 133, 127);
   opacity: 0.8;
   transition: ease 0.5s;
@@ -103,11 +107,18 @@ body {
     display: flex;
     justify-content: space-around;
     a {
-      padding-left: 5vw;
+      margin-left: 2vw;
+      padding: 0.15vw;
       font-family: "Play", sans-serif;
       font-size: 2vh;
       color: white;
+      border-radius: 5px;
+      border:solid 3px transparent ;
+      transition: 1s ease;
       text-decoration: none;
+      &:hover{
+          border-color: white;
+      }
     }
   }
   img {
@@ -131,6 +142,7 @@ body {
   height: 6vh;
   background-color: rgb(28, 133, 127);
   opacity: 0.7;
+  clip-path: circle(0px) reverse;
 }
 .navabs {
   position: absolute;
@@ -140,19 +152,25 @@ body {
   width: 100%;
   height: 6vh;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background-color: transparent;
   opacity: 1;
-
   .link {
     display: flex;
     justify-content: space-around;
     a {
-      padding-left: 5vw;
+      margin-left: 2vw;
+      padding: 0.15vw;
       font-family: "Play", sans-serif;
       font-size: 2vh;
       color: white;
       text-decoration: none;
+      border-radius: 5px;
+      border:solid 3px transparent ;
+      transition: 1s ease;
+      &:hover{
+          border-color: white;
+      }
     }
   }
   img {
@@ -172,16 +190,37 @@ body {
   position: fixed;
   bottom: 0;
   right: 0;
+  .pieButton{
+      z-index: 2;
+      @include flexCenter();
+      @include SelectDisable();
+      position:fixed;
+      bottom: 5vh;
+      right: 5.5vw;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background-color: white;
+      opacity: 0.8;
+      font-size: 1.5vh;
+      font-family: sans-serif;
+      transition: 0.3s ease;
+      &:hover{
+        box-shadow: 0 0 15px 5px white;
+      }
+  }
   .kitsuneChan {
+    background-color: rgba(0, 0, 0, 0.103);
     image-rendering: crisp-edges;
     height: 25vh;
     position: fixed;
-    bottom: 0;
+    bottom: 3vh;
     right: 0;
     animation: logofloat 5s ease-in-out infinite alternate;
+    clip-path: circle(7vh at 45% 38%);
+    transition: 1s ease;
   }
   #blur {
-    filter: blur(1px);
   }
 }
 
@@ -191,9 +230,8 @@ body {
   top: 0;
   z-index: -1;
   width: 100%;
-  height: 90vh;
+  height: $banner-height;
   background-color: #353535;
-  background-image: url(../img/PROTOCOL-EVACULATEnm.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -203,7 +241,7 @@ body {
     top: 0;
     z-index: -1;
     width: 100%;
-    height: 90vh;
+    height: $banner-height;
     background-color: #353535;
     background-image: linear-gradient(
         to top,
@@ -215,12 +253,12 @@ body {
     background-position: center;
     background-size: cover;
     transform: scale(1.1);
-    filter: blur(8px);
+    filter: blur(5px);
     margin: -5px -10px -10px -5px;
   }
   .bgcover {
     width: 100%;
-    height: 90vh;
+    height: $banner-height;
     background-color: #151515;
     opacity: 0.5;
   }
@@ -233,7 +271,8 @@ body {
     top: var(--randomY);
     left: var(--randomX);
     opacity: var(--randomOpacity);
-    background-color: rgba(49, 255, 255, 0.514);
+    background-color: rgba(49, 255, 255, 0.288);
+    backdrop-filter: blur(20px);
     filter: blur(2px);
   }
 
@@ -243,6 +282,7 @@ body {
     min-width: 350px;
     min-height: 350px;
     animation: logofloat 3s ease-in-out infinite alternate;
+    transition: 0.5s ease;
   }
   #blur {
     filter: blur(10px);
