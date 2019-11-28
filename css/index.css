@@ -180,7 +180,7 @@ body {
   font-size: 2vh;
   color: white;
   border-radius: 5px;
-  border: solid 3px transparent;
+  border: solid 0.2vh transparent;
   -webkit-transition: 1s ease;
   transition: 1s ease;
   text-decoration: none;
@@ -264,7 +264,7 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  border: solid 3px transparent;
+  border: solid 0.2vh transparent;
   -webkit-transition: 1s ease;
   transition: 1s ease;
 }
@@ -323,6 +323,7 @@ body {
   font-family: sans-serif;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  display: none;
 }
 
 .cartpie .pieButton:hover {
@@ -335,7 +336,7 @@ body {
   image-rendering: crisp-edges;
   height: 25vh;
   position: fixed;
-  bottom: 3vh;
+  bottom: -1.5vh;
   right: 0;
   -webkit-animation: logofloat 5s ease-in-out infinite alternate;
           animation: logofloat 5s ease-in-out infinite alternate;
@@ -343,6 +344,11 @@ body {
           clip-path: circle(7vh at 45% 38%);
   -webkit-transition: 1s ease;
   transition: 1s ease;
+}
+
+.cartpie .kitsuneChan:hover {
+  -webkit-clip-path: circle(9vh at 45% 38%);
+          clip-path: circle(9vh at 45% 38%);
 }
 
 .banner {
@@ -367,6 +373,14 @@ body {
   overflow: hidden;
 }
 
+.banner #bannerCanvas {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 85vh;
+}
+
 .banner .bgimage {
   position: absolute;
   top: 0;
@@ -381,8 +395,8 @@ body {
   background-size: cover;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
   margin: -5px -10px -10px -5px;
 }
 
@@ -409,6 +423,7 @@ body {
 }
 
 .banner .bannerlogo {
+  z-index: 2;
   position: absolute;
   height: 65%;
   min-width: 350px;
