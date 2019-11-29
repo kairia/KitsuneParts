@@ -1,50 +1,77 @@
 var AnimationSpeed = 30;
 
-
-var block = document.querySelectorAll('.block');
-var Animstop = new Boolean(false);
+var block = document.querySelectorAll(".block");
+var text = document.querySelector(".commit");
+var Animstop = Boolean(false);
 /* preloader */
-$('html, body').css({
-    'overflow': 'hidden',
-    'height': '100%'
-})
-window.addEventListener('load', () => {
-
-    const preload = document.querySelector('.preload');
-    preload.classList.add('preload-finish');
-    $('html, body').removeAttr('style')
+$("html, body").css({
+  overflow: "hidden",
+  height: "100%"
+});
+window.addEventListener("load", () => {
+  const preload = document.querySelector(".preload");
+  preload.classList.add("preload-finish");
+  $("html, body").removeAttr("style");
 });
 /* preloader */
 /* randomanimater */
-function setProperty(height,width,horizon,vertic,opacity) {
-    const selected = Math.round(Math.random()*15);
-    block[selected].style.setProperty('--randomHeight', height +'vh' );
-    block[selected].style.setProperty('--randomWidth', width +'vw');
-    block[selected].style.setProperty('--randomX', horizon +'%');
-    block[selected].style.setProperty('--randomY', vertic +'%');
-    block[selected].style.setProperty('--randomOpacity', opacity );
+  function setProperty(height, width, horizon, vertic, opacity) {
+    const selected = Math.round(Math.random() * 15);
+    block[selected].style.setProperty("--randomHeight", height + "vh");
+    block[selected].style.setProperty("--randomWidth", width + "vw");
+    block[selected].style.setProperty("--randomX", horizon + "%");
+    block[selected].style.setProperty("--randomY", vertic + "%");
+    block[selected].style.setProperty("--randomOpacity", opacity);
   }
   function changePercentage() {
-    var height = Math.random()*8;
-    var width = Math.random()*8;
-    var horizon = Math.random()*100;
-    var vertic = Math.random()*100;
-    var opacity =Math.random()*0.4+0.1;
-    setProperty(height,width,horizon,vertic,opacity);
+    var height = Math.random() * 8;
+    var width = Math.random() * 8;
+    var horizon = Math.random() * 100;
+    var vertic = Math.random() * 100;
+    var opacity = Math.random() * 0.4 + 0.1;
+    setProperty(height, width, horizon, vertic, opacity);
   }
-  setInterval(changePercentage, AnimationSpeed);
+  var RBlock;
+  var RBlockAnim= function(){
+    RBlock=setInterval(changePercentage, AnimationSpeed);
+  }
+  RBlockAnim();
+
+
+//commitment animation for banner//
+/*   function setCommitProperty(duration) {
+    text.style.setProperty('--animation-time', duration +'s');
+  }
+  function changeAnimationTime() {
+    var animationDuration = Math.random()*0.4;
+    setCommitProperty(animationDuration);
+  }
+  var RCommit;
+  var RCommitAnim= function(){
+    RCommit=setInterval(changeAnimationTime, 500);
+  }
+  RCommitAnim(); */
+//commitment animation for banner//
+
 /* randomanimater */
 
 const controller = new ScrollMagic.Controller();
 const nav = new ScrollMagic.Scene({
-    triggerElement: '.info',
-    duration:0,
-    triggerHook:0,
+  triggerElement: ".info",
+  duration: 0,
+  triggerHook: 0
 })
+  .on('start',function animstop(){
+    if(Animstop===false){
+        Animstop = Boolean(true);
+        clearInterval(RBlock);
+        console.log('debug');
+    }
+    else{
+        Animstop = Boolean(false);
+        RBlockAnim();
+    }
+}).reverse(true)
   .setClassToggle(".nav", "nav-engage").reverse(true)
   .addIndicators()
   .addTo(controller);
-
-
-
-
