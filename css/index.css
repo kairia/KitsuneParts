@@ -44,7 +44,7 @@ body {
   -ms-user-select: none;
       user-select: none;
   z-index: 100;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   background-color: #252525;
@@ -356,7 +356,7 @@ body {
   top: 0;
   z-index: -1;
   width: 100%;
-  height: 85vh;
+  height: 92vh;
   background-color: #353535;
   background-repeat: no-repeat;
   background-position: center;
@@ -369,7 +369,7 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 85vh;
+  height: 92vh;
 }
 
 .banner .bgimage {
@@ -377,23 +377,21 @@ body {
   top: 0;
   z-index: -1;
   width: 100%;
-  height: 85vh;
+  height: 92vh;
   background-color: #353535;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 245, 103, 0.555)), to(rgba(49, 207, 255, 0.514))), url(../img/PROTOCOL-EVACULATEnm.png);
-  background-image: linear-gradient(to top, rgba(255, 245, 103, 0.555), rgba(49, 207, 255, 0.514)), url(../img/PROTOCOL-EVACULATEnm.png);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 245, 103, 0.247)), to(rgba(49, 207, 255, 0.253))), url(../img/untitled.png);
+  background-image: linear-gradient(to top, rgba(255, 245, 103, 0.247), rgba(49, 207, 255, 0.253)), url(../img/untitled.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
   margin: -5px -10px -10px -5px;
 }
 
 .banner .bgcover {
   width: 100%;
-  height: 85vh;
+  height: 92vh;
   background-color: #151515;
   opacity: 0.4;
 }
@@ -577,14 +575,14 @@ body {
   position: relative;
   z-index: -1;
   width: 100%;
-  height: 2000px;
+  height: 0vh;
 }
 
 .bottom {
   position: relative;
   z-index: -1;
   width: 100%;
-  height: 500px;
+  height: 0vh;
 }
 
 .footer {

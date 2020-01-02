@@ -1,7 +1,7 @@
 @import "./flexCenter";
 @import "./SelectDisable";
 
-$banner-height: 85vh;
+$banner-height: 92vh;
 
 :root {
   --randomHeight: 10;
@@ -32,7 +32,7 @@ body {
   @include flexCenter();
   @include SelectDisable();
   z-index: 100;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   background-color: #252525;
@@ -247,15 +247,14 @@ body {
     background-color: #353535;
     background-image: linear-gradient(
         to top,
-        rgba(255, 245, 103, 0.555),
-        rgba(49, 207, 255, 0.514)
+        rgba(255, 245, 103, 0.247),
+        rgba(49, 207, 255, 0.253)
       ),
-      url(../img/PROTOCOL-EVACULATEnm.png);
+      url(../img/untitled.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     transform: scale(1.1);
-    filter: blur(3px);
     margin: -5px -10px -10px -5px;
   }
   .bgcover {
@@ -354,7 +353,7 @@ body {
   }
 }
 .events {
-@include SelectDisable;
+  @include SelectDisable;
   @include flexCenter;
   justify-content: flex-start;
   font-size: 4vh;
@@ -380,13 +379,13 @@ body {
   position: relative;
   z-index: -1;
   width: 100%;
-  height: 2000px;
+  height: 0vh;
 }
 .bottom {
   position: relative;
   z-index: -1;
   width: 100%;
-  height: 500px;
+  height: 0vh;
 }
 .footer {
   @include flexCenter();
