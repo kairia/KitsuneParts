@@ -27,6 +27,7 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   white-space: nowrap;
+  background-color: rgba($color: #000000, $alpha: 1.0);
 }
 .preload {
   @include flexCenter();
@@ -133,6 +134,7 @@ body {
   position: absolute;
   width: 100%;
   height: 6vh;
+  z-index: 20;
   background-color: rgb(28, 133, 127);
   opacity: 0.7;
   clip-path: circle(0px) reverse;
@@ -141,7 +143,7 @@ body {
   position: absolute;
   top: 0;
   display: flex;
-  z-index: 0;
+  z-index: 20;
   width: 100%;
   height: 6vh;
   align-items: center;
@@ -223,7 +225,7 @@ body {
   @include flexCenter();
   position: relative;
   top: 0;
-  z-index: -1;
+  z-index: 1;
   width: 100%;
   height: $banner-height;
   background-color: #353535;
@@ -291,8 +293,8 @@ body {
     z-index: 2;
     position: absolute;
     height: 65%;
-    min-width: 350px;
-    min-height: 350px;
+    min-width: 150px;
+    min-height: 150px;
     animation: logofloat 3s ease-in-out infinite alternate;
     transition: 0.5s ease;
   }
@@ -373,7 +375,25 @@ body {
     right: -7vw;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    background-clip: text;
   }
+}
+.event-display{
+  @include SelectDisable;
+  @include flexCenter;
+  display: none;
+  position: absolute;
+  z-index: 11;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width:20vw;
+  background-color: rgb(44, 44, 44);
+  opacity: 0.7;
+  transition: 1s ease;
+}
+.event-display-on{
+  display: flex;
 }
 .info {
   position: relative;
@@ -398,7 +418,32 @@ body {
   .claim {
     font-family: Helvetica;
     color: white;
-    font-size: 5px;
+    font-size: 1vh;
     opacity: 0.5;
   }
+}
+
+
+
+@media screen and (max-width: 1200px){
+
+  .events,.cartpie{
+    display: none;
+  }
+  .bannerlogo{
+    img {
+      width: 50%;
+    }
+  }
+
+  
+  *{
+    animation: none;
+  }
+ 
+
+
+
+
+
 }

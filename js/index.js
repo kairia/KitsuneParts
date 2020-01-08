@@ -13,6 +13,20 @@ window.addEventListener("load", () => {
   preload.classList.add("preload-finish");
   $("html, body").removeAttr("style");
 });
+
+var events = document.getElementById("events");
+events.addEventListener("click",()=>{
+  const display = document.querySelector(".event-display");
+  display.classList.toggle("event-display-on");
+  
+});
+
+var eventdisplay = document.getElementById("event-display");
+eventdisplay.addEventListener("click",()=>{
+  const display = document.querySelector(".event-display");
+  display.classList.toggle("event-display-on");
+  
+});
 /* preloader */
 /* randomanimater */
 /*   function setProperty(height, width, horizon, vertic, opacity) {
